@@ -14,7 +14,7 @@ public class BaseTest {
 
 
     @BeforeClass
-    public void setUp(){
+    public void setUp() {
         playwright = Playwright.create();
         BrowserType.LaunchOptions launchOptions = new BrowserType.LaunchOptions();
         launchOptions.setHeadless(false);
@@ -22,6 +22,17 @@ public class BaseTest {
         browser = playwright.webkit().launch(launchOptions);
         browserContext = browser.newContext(new Browser.NewContextOptions()
                 .setViewportSize(1920, 1080));
+//        ADBLOCKER
+//        context = playwright.chromium().launchPersistentContext(
+//                Paths.get(TMP_PATH),
+//                new BrowserType.LaunchPersistentContextOptions()
+//                        .setHeadless(false)
+//                        .setSlowMo(10000)
+//                        .setArgs(Arrays.asList(
+//                                String.format("--load-extensions=%s", EXTENSION_PATH),
+//                                String.format("--disable-extensions-except=%s", EXTENSION_PATH)
+//                        ))
+//        );
         page = browserContext.newPage();
         page.navigate("https://saucedemo.com");
 //        browserContext = browser.newContext(new Browser.NewContextOptions()
@@ -30,7 +41,7 @@ public class BaseTest {
     }
 
     @AfterClass
-    public void tearDown(){
+    public void tearDown() {
         page.close();
         browser.close();
         playwright.close();

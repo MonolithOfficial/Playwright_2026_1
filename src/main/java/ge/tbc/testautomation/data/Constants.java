@@ -7,4 +7,5 @@ public class Constants {
     public static final String LASTNAME = "Arveladze";
     public static final String ZIPCODE = "0111";
     public static final String SUCCESS_MESSAGE = "Thank you for your order!";
+    public static final String EXTENSION_PATH = System.getProperty("user.dir") + "/src/main/resources/LGBLNFIDAHCDCJDDIEPKCKCFDHPKNNJH_2_1_54_0";
 }
