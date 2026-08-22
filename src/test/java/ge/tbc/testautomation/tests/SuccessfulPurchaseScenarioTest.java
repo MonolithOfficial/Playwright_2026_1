@@ -2,6 +2,7 @@ package ge.tbc.testautomation.tests;
 
 import ge.tbc.testautomation.data.Constants;
 import ge.tbc.testautomation.steps.*;
+import io.qameta.allure.Feature;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -10,6 +11,8 @@ import static ge.tbc.testautomation.data.Constants.LASTNAME;
 import static ge.tbc.testautomation.data.Constants.SUCCESS_MESSAGE;
 import static ge.tbc.testautomation.data.Constants.ZIPCODE;
 
+@Test(description = "Successful Purchase Scenario")
+@Feature("Orders")
 public class SuccessfulPurchaseScenarioTest extends BaseTest{
     LoginSteps loginSteps;
     DashboardSteps dashboardSteps;
